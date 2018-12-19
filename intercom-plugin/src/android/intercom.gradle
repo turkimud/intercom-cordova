@@ -32,7 +32,7 @@ dependencies {
     if (pushType == 'gcm') {
         compile 'io.intercom.android:intercom-sdk-gcm:5.1.5'
     } else if (pushType == 'fcm' || pushType == 'fcm-without-build-plugin') {
-        compile 'com.google.firebase:firebase-messaging:11.+'
+        compile 'com.google.firebase:firebase-messaging:15.+'
         compile 'io.intercom.android:intercom-sdk-fcm:5.1.5'
     }
 }
