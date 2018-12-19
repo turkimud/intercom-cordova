@@ -4,7 +4,7 @@
     <author>Intercom</author>
     <license>MIT License</license>
     <description>Cordova plugin for Intercom for mobile</description>
-    <repo>https://github.com/intercom/intercom-cordova.git</repo>
+    <repo>https://github.com/turkimud/intercom-cordova.git</repo>
     <keywords>intercom,intercom-cordova</keywords>
 
     <engines>
@@ -13,7 +13,7 @@
       <engine name="cordova-ios" version=">=4.5.4" />
     </engines>
 
-    <js-module name="Intercom" src="www/intercom.js">
+    <js-module name="Intercom" src="intercom-plugin/www/intercom.js">
         <clobbers target="intercom" />
         <clobbers target="cordova.plugins.intercom" />
         <clobbers target="plugin.intercom" />
@@ -21,14 +21,14 @@
 
 
     <platform name="ios">
-      <hook type="before_plugin_install" src="scripts/prepareCocoaPods.js" />
-      <hook type="after_prepare" src="scripts/checkForUpdate.js" />
+      <hook type="before_plugin_install" src="intercom-plugin/scripts/prepareCocoaPods.js" />
+      <hook type="after_prepare" src="intercom-plugin/scripts/checkForUpdate.js" />
 
-      <header-file src="src/ios/IntercomBridge.h" />
-      <source-file src="src/ios/IntercomBridge.m" />
+      <header-file src="intercom-plugin/src/ios/IntercomBridge.h" />
+      <source-file src="intercom-plugin/src/ios/IntercomBridge.m" />
 
-      <header-file src="src/ios/AppDelegate+IntercomPush.h" />
-      <source-file src="src/ios/AppDelegate+IntercomPush.m" />
+      <header-file src="intercom-plugin/src/ios/AppDelegate+IntercomPush.h" />
+      <source-file src="intercom-plugin/src/ios/AppDelegate+IntercomPush.m" />
 
       <config-file target="config.xml" parent="/*">
         <feature name="Intercom">
@@ -51,11 +51,11 @@
     </platform>
 
     <platform name="android">
-      <source-file src="src/android/IntercomBridge.java" target-dir="src/io/intercom/android/sdk" />
-      <source-file src="src/android/CordovaHeaderInterceptor.java" target-dir="src/io/intercom/android/sdk" />
+      <source-file src="intercom-plugin/src/android/IntercomBridge.java" target-dir="src/io/intercom/android/sdk" />
+      <source-file src="intercom-plugin/src/android/CordovaHeaderInterceptor.java" target-dir="src/io/intercom/android/sdk" />
 
-      <framework src="src/android/intercom.gradle" custom="true" type="gradleReference" />
-      <framework src="src/android/build-extras-intercom.gradle" custom="true" type="gradleReference" />
+      <framework src="intercom-plugin/src/android/intercom.gradle" custom="true" type="gradleReference" />
+      <framework src="intercom-plugin/src/android/build-extras-intercom.gradle" custom="true" type="gradleReference" />
 
       <config-file target="res/xml/config.xml" parent="/*">
         <feature name="Intercom">
